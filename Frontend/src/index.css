@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background: #0b1220;
+  font-family: 'Inter', sans-serif;
+}
+
+/* subtle animated gradient glow */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -200px;
+  background: radial-gradient(circle at 30% 40%, rgba(99,102,241,0.25), transparent 40%),
+              radial-gradient(circle at 70% 70%, rgba(168,85,247,0.25), transparent 40%);
+  filter: blur(120px);
+  z-index: -1;
+  animation: floatBg 10s ease-in-out infinite alternate;
+}
+
+@keyframes floatBg {
+  from { transform: translateY(0px); }
+  to { transform: translateY(40px); }
+}
+
+.dark {
+  background-color: #0f172a;
+  color: white;
+}
+
+html{
+scroll-behavior:smooth;
+}
